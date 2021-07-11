@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/management/spawn.gd" type="Script" id=1]
+
+[node name="Spawn" type="Node2D"]
+position = Vector2( 53.0085, 41.4268 )
+script = ExtResource( 1 )
+sliced_box = [ "res://assets/08-Box/Box Pieces 1.png", "res://assets/08-Box/Box Pieces 2.png", "res://assets/08-Box/Box Pieces 3.png", "res://assets/08-Box/Box Pieces 4.png" ]

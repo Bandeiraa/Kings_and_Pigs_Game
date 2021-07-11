@@ -1,0 +1,115 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Position2D",
+"class": "DamagePopup",
+"language": "GDScript",
+"path": "res://scripts/combat/damage_popup.gd"
+}, {
+"base": "CanvasLayer",
+"class": "GUI",
+"language": "GDScript",
+"path": "res://scripts/management/hud.gd"
+}, {
+"base": "Area2D",
+"class": "Hurtbox",
+"language": "GDScript",
+"path": "res://scripts/combat/hurt_box.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "KingPlayer",
+"language": "GDScript",
+"path": "res://scripts/player/king.gd"
+}, {
+"base": "Sprite",
+"class": "KingPlayerTexture",
+"language": "GDScript",
+"path": "res://scripts/player/king_texture.gd"
+}, {
+"base": "RigidBody2D",
+"class": "ObjectTemplate",
+"language": "GDScript",
+"path": "res://scripts/objects/object_template.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Pig",
+"language": "GDScript",
+"path": "res://scripts/enemies/pig.gd"
+}, {
+"base": "Sprite",
+"class": "PigTexture",
+"language": "GDScript",
+"path": "res://scripts/enemies/pig_texture.gd"
+} ]
+_global_script_class_icons={
+"DamagePopup": "",
+"GUI": "",
+"Hurtbox": "",
+"KingPlayer": "",
+"KingPlayerTexture": "",
+"ObjectTemplate": "",
+"Pig": "",
+"PigTexture": ""
+}
+
+[application]
+
+config/name="Kings And Pigs"
+run/main_scene="res://scenes/management/world_manager.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=320
+window/size/height=180
+window/size/test_width=1280
+window/size/test_height=720
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[input]
+
+Attack={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Jump={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Object"
+2d_physics/layer_5="HurtBox"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
