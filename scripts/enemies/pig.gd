@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name Pig
 
-const BOX: Resource = preload("res://scenes/objects/box.tscn")
+const BOX: Resource = preload("res://scenes/objects/damage_box.tscn")
 
 var player_ref: Object = null
 

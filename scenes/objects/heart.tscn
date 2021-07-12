@@ -67,9 +67,8 @@ radius = 5.09037
 [sub_resource type="OccluderPolygon2D" id=14]
 polygon = PoolVector2Array( -1.14562, -2.93774, -3.06445, -2.97945, -4.02387, -2.02004, -4.06558, 1.02507, -1.02048, 3.98674, 0.940067, 4.07017, 4.11031, 0.899924, 4.0686, -2.02004, 3.02575, -2.93774, 1.06521, -3.02117, 0.981781, -2.02004, -1.02048, -2.06175 )
 
-[node name="Heart" groups=[
-"Assistant",
-] instance=ExtResource( 1 )]
+[node name="Heart" instance=ExtResource( 1 )]
+collision_mask = 1
 script = ExtResource( 3 )
 type = "Support"
 spawn_rate = 100.0
@@ -81,13 +80,16 @@ heal = 1
 position = Vector2( -2.03386, 0 )
 frames = SubResource( 11 )
 animation = "Idle"
-frame = 2
+frame = 6
 playing = true
 
 [node name="Collision" parent="." index="1"]
 visible = false
 position = Vector2( 0, 0.303984 )
 shape = SubResource( 12 )
+
+[node name="CollisionArea" parent="." index="2"]
+collision_mask = 2
 
 [node name="Collision" parent="CollisionArea" index="0"]
 visible = false

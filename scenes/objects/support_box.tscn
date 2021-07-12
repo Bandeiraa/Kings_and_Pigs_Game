@@ -1,0 +1,58 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/objects/object_template.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/objects/support_box.gd" type="Script" id=2]
+[ext_resource path="res://assets/08-Box/Idle.png" type="Texture" id=3]
+[ext_resource path="res://scenes/objects/diamond.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/objects/heart.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/objects/big_heart.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/management/spawn.tscn" type="PackedScene" id=7]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 22, 16 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10.3609, 7.91151 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10.4665, 7.90614 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( 8.88985, -8.01125, -9.8201, -7.95869, -10.8712, -6.96013, -10.8187, 7.07233, -9.92521, 8.01834, 9.04752, 8.07089, 9.99352, 6.96722, 9.94097, -7.01269 )
+
+[node name="SupportBox" instance=ExtResource( 1 )]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource( 2 )
+type = "Support"
+slices_to_spawn = ExtResource( 7 )
+assistants_list = [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ) ]
+
+[node name="Texture" parent="." index="0"]
+frames = SubResource( 2 )
+animation = "Idle"
+
+[node name="Collision" parent="." index="1"]
+visible = false
+position = Vector2( -0.463515, 0 )
+shape = SubResource( 3 )
+
+[node name="CollisionArea" parent="." index="2"]
+collision_mask = 32
+
+[node name="Collision" parent="CollisionArea" index="0"]
+visible = false
+position = Vector2( -0.420448, 0 )
+shape = SubResource( 4 )
+
+[node name="Occluder" parent="." index="3"]
+occluder = SubResource( 5 )

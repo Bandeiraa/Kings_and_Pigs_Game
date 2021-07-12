@@ -1,7 +1,7 @@
 extends RigidBody2D
 class_name ObjectTemplate
 
-onready var collision: CollisionShape2D = get_node("Collision")
+onready var collision_area: Area2D = get_node("CollisionArea")
 onready var anim_sprite: AnimatedSprite = get_node("Texture")
 
 export(String) var type

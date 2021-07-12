@@ -10,7 +10,7 @@ export(Array, String) var health_texture
 
 func update_gui(value: int, type: String) -> void:
 	match type:
-		"Damage":
+		"Attack":
 			health_gui.texture = load(health_texture[value])
 			
 		"Support":

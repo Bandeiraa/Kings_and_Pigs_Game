@@ -13,11 +13,11 @@ export(Vector2) var min_scale_size
 
 func _ready() -> void:
 	match type:
-		"Damage":
+		"Attack":
 			damage_label.add_color_override("font_color", Color(0.91, 0.08, 0.08, 1.0))
 			
-		"Heal":
-			damage_label.add_color_override("font_color", Color(0.84, 0.07, 0.07, 1.0))
+		"Support":
+			damage_label.add_color_override("font_color", Color(0.07, 0.84, 0.07, 1.0))
 			
 	damage_label.text = str(value)
 	randomize()

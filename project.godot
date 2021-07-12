@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://scripts/management/hud.gd"
 }, {
 "base": "Area2D",
+"class": "HitBox",
+"language": "GDScript",
+"path": "res://scripts/combat/hit_box.gd"
+}, {
+"base": "Area2D",
 "class": "Hurtbox",
 "language": "GDScript",
 "path": "res://scripts/combat/hurt_box.gd"
@@ -52,6 +57,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "DamagePopup": "",
 "GUI": "",
+"HitBox": "",
 "Hurtbox": "",
 "KingPlayer": "",
 "KingPlayerTexture": "",
@@ -100,11 +106,12 @@ Right={
 
 [layer_names]
 
-2d_physics/layer_1="World"
-2d_physics/layer_2="Player"
-2d_physics/layer_3="Enemy"
+2d_physics/layer_1="Wall"
+2d_physics/layer_2="King"
+2d_physics/layer_3="Pig"
 2d_physics/layer_4="Object"
-2d_physics/layer_5="HurtBox"
+2d_physics/layer_5="HitBox"
+2d_physics/layer_6="HurtBox"
 
 [physics]
 

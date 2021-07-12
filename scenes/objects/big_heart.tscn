@@ -6,56 +6,56 @@
 [ext_resource path="res://assets/12-Live and Coins/Big Heart Hit (18x14).png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 2 )
 region = Rect2( 18, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 18, 14 )
+region = Rect2( 36, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
-region = Rect2( 18, 0, 18, 14 )
+region = Rect2( 54, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
-region = Rect2( 36, 0, 18, 14 )
+region = Rect2( 72, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
-region = Rect2( 54, 0, 18, 14 )
+region = Rect2( 90, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
-region = Rect2( 72, 0, 18, 14 )
+region = Rect2( 108, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
-region = Rect2( 90, 0, 18, 14 )
+region = Rect2( 126, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 2 )
-region = Rect2( 108, 0, 18, 14 )
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 2 )
-region = Rect2( 126, 0, 18, 14 )
+atlas = ExtResource( 4 )
+region = Rect2( 18, 0, 18, 14 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ) ],
-"loop": true,
-"name": "Hit",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 8.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "Hit",
+"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=12]
@@ -67,9 +67,8 @@ radius = 6.92324
 [sub_resource type="OccluderPolygon2D" id=14]
 polygon = PoolVector2Array( -1.33722, -4.98493, -3.94468, -4.94074, -6.066, -2.81942, -6.15439, 0.937085, -1.07206, 6.24039, 0.739904, 6.24039, 5.77804, 1.02547, 5.82224, -2.952, 3.8335, -4.89655, 0.739904, -5.11752, 0.784099, -4.05686, -1.24883, -4.01266 )
 
-[node name="BigHeart" groups=[
-"Assistant",
-] instance=ExtResource( 1 )]
+[node name="BigHeart" instance=ExtResource( 1 )]
+collision_mask = 1
 script = ExtResource( 3 )
 type = "Support"
 spawn_rate = 100.0
@@ -81,7 +80,6 @@ heal = 3
 position = Vector2( -2.20735, 0 )
 frames = SubResource( 11 )
 animation = "Idle"
-frame = 7
 playing = true
 
 [node name="Collision" parent="." index="1"]
@@ -90,6 +88,7 @@ shape = SubResource( 12 )
 
 [node name="CollisionArea" parent="." index="2"]
 visible = false
+collision_mask = 2
 
 [node name="Collision" parent="CollisionArea" index="0"]
 shape = SubResource( 13 )
