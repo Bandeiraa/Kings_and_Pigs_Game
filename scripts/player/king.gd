@@ -4,10 +4,13 @@ class_name KingPlayer
 onready var texture: Sprite = get_node("Texture")
 onready var hurtbox: Area2D = get_node("HurtBox")
 
+var door_ref: Object = null
 var velocity: Vector2 = Vector2.ZERO
 var input_strength: Vector2 = Vector2.ZERO
+
 var jump_count: int = 0
 var is_jumping: bool = false
+var is_interacting: bool = false
 var is_attacking: bool = false
 
 export(int) var speed 
@@ -16,11 +19,15 @@ export(int) var gravity
 
 export(float, 0, 1.0) var acceleration = 0.25
 
+func _ready() -> void:
+	set_physics_process(false)
+	
+	
 func _physics_process(delta: float) -> void:
 	input_listener()
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP, false, 4, PI/4, false)
-	texture.animation_manager(velocity, is_jumping, is_attacking)
+	texture.animation_manager(velocity, is_jumping, is_attacking, is_interacting)
 	hurtbox.verify_direction(velocity.x)
 	
 	
@@ -28,6 +35,7 @@ func input_listener() -> void:
 	move()
 	jump()
 	attack()
+	interact()
 	
 	
 func move() -> void:
@@ -53,6 +61,12 @@ func jump() -> void:
 func attack() -> void:
 	if Input.is_action_just_pressed("Attack") and not is_jumping:
 		is_attacking = true
+		set_physics_process(false)
+		
+		
+func interact() -> void:
+	if Input.is_action_just_pressed("Interact") and door_ref != null:
+		is_interacting = true
 		set_physics_process(false)
 		
 		

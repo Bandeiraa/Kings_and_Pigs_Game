@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/objects/object_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/12-Live and Coins/Big Diamond Idle (18x14).png" type="Texture" id=2]
 [ext_resource path="res://scripts/objects/diamond.gd" type="Script" id=3]
 [ext_resource path="res://assets/12-Live and Coins/Big Diamond Hit (18x14).png" type="Texture" id=4]
+[ext_resource path="res://scenes/scenario/particles_fx_02.tscn" type="PackedScene" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -79,7 +80,7 @@ polygon = PoolVector2Array( 4.0212, -4.96104, -3.80116, -4.96104, -5.87829, -3.0
 collision_mask = 1
 script = ExtResource( 3 )
 type = "Extra"
-spawn_rate = 100.0
+spawn_rate = 25.0
 x_threshold = 30.0
 y_threshold = 60.0
 value = 1
@@ -88,6 +89,7 @@ value = 1
 position = Vector2( -1.88504, 0 )
 frames = SubResource( 13 )
 animation = "Idle"
+frame = 6
 playing = true
 
 [node name="Collision" parent="." index="1"]
@@ -103,6 +105,17 @@ collision_mask = 2
 shape = SubResource( 15 )
 
 [node name="Occluder" parent="." index="3"]
+visible = false
+light_mask = 2
 occluder = SubResource( 16 )
+light_mask = 2
+
+[node name="ParticlesFX_02" parent="." index="4" instance=ExtResource( 5 )]
+show_behind_parent = true
+position = Vector2( 0.265167, -1.14905 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Light" parent="." index="5"]
+texture_scale = 0.3
 
 [connection signal="animation_finished" from="Texture" to="." method="on_animation_finished"]

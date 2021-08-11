@@ -44,7 +44,7 @@ shape = SubResource( 3 )
 
 [node name="CollisionArea" parent="." index="2"]
 position = Vector2( -0.483115, 0 )
-collision_mask = 2
+collision_mask = 35
 
 [node name="Collision" parent="CollisionArea" index="0"]
 visible = false
@@ -52,3 +52,6 @@ shape = SubResource( 4 )
 
 [node name="Occluder" parent="." index="3"]
 occluder = SubResource( 5 )
+
+[node name="Light" parent="." index="4"]
+enabled = false

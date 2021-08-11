@@ -7,7 +7,7 @@ onready var animation: AnimationPlayer = get_node("Animation")
 
 export(bool) var on_hit
 
-func animation_manager(input_vector: Vector2, jumping: bool, attacking: bool) -> void:
+func animation_manager(input_vector: Vector2, jumping: bool, attacking: bool, interacting: bool) -> void:
 	verify_direction(input_vector.x)
 	if jumping and not on_hit:
 		jump_animation(input_vector.y)
@@ -17,6 +17,9 @@ func animation_manager(input_vector: Vector2, jumping: bool, attacking: bool) ->
 		
 	if not jumping and not attacking and not on_hit:
 		move_animation(input_vector.x)
+		
+	if interacting and not jumping and not attacking and not on_hit:
+		animation.play("Door_In")
 		
 		
 func verify_direction(x_velocity: float) -> void:
@@ -44,3 +47,7 @@ func hit_animation(animation_name: String) -> void:
 	on_hit = true
 	emit_signal("attack_end")
 	animation.play(animation_name)
+	
+	
+func door_out_animation() -> void:
+	animation.play("Door_Out")

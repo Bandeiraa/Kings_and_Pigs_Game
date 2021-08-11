@@ -1,61 +1,62 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/objects/object_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/12-Live and Coins/Small Heart Idle (18x14).png" type="Texture" id=2]
 [ext_resource path="res://scripts/objects/heart.gd" type="Script" id=3]
 [ext_resource path="res://assets/12-Live and Coins/Small Heart Hit (18x14).png" type="Texture" id=4]
+[ext_resource path="res://scenes/scenario/particles_fx_01.tscn" type="PackedScene" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 2 )
 region = Rect2( 18, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 18, 14 )
+region = Rect2( 36, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
-region = Rect2( 18, 0, 18, 14 )
+region = Rect2( 54, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
-region = Rect2( 36, 0, 18, 14 )
+region = Rect2( 72, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
-region = Rect2( 54, 0, 18, 14 )
+region = Rect2( 90, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
-region = Rect2( 72, 0, 18, 14 )
+region = Rect2( 108, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
-region = Rect2( 90, 0, 18, 14 )
+region = Rect2( 126, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 2 )
-region = Rect2( 108, 0, 18, 14 )
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 18, 14 )
 
 [sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 2 )
-region = Rect2( 126, 0, 18, 14 )
+atlas = ExtResource( 4 )
+region = Rect2( 18, 0, 18, 14 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ) ],
-"loop": true,
-"name": "Hit",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 8.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "Hit",
+"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=12]
@@ -67,11 +68,41 @@ radius = 5.09037
 [sub_resource type="OccluderPolygon2D" id=14]
 polygon = PoolVector2Array( -1.14562, -2.93774, -3.06445, -2.97945, -4.02387, -2.02004, -4.06558, 1.02507, -1.02048, 3.98674, 0.940067, 4.07017, 4.11031, 0.899924, 4.0686, -2.02004, 3.02575, -2.93774, 1.06521, -3.02117, 0.981781, -2.02004, -1.02048, -2.06175 )
 
+[sub_resource type="CanvasItemMaterial" id=15]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id=16]
+_data = [ Vector2( 0, 0 ), 0.0, -0.00725338, 0, 0, Vector2( 1, 1 ), -0.0232438, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=17]
+curve = SubResource( 16 )
+
+[sub_resource type="ParticlesMaterial" id=18]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale_random = 0.3
+scale_curve = SubResource( 17 )
+color = Color( 1, 0.243137, 0.243137, 1 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[sub_resource type="StreamTexture" id=19]
+flags = 4
+load_path = "res://.import/random_selection.png-e475471c4b78c0e21c7554ae788ceb0b.stex"
+
 [node name="Heart" instance=ExtResource( 1 )]
 collision_mask = 1
 script = ExtResource( 3 )
 type = "Support"
-spawn_rate = 100.0
+spawn_rate = 40.0
 x_threshold = 15.0
 y_threshold = 45.0
 heal = 1
@@ -96,6 +127,20 @@ visible = false
 shape = SubResource( 13 )
 
 [node name="Occluder" parent="." index="3"]
+visible = false
+light_mask = 2
 occluder = SubResource( 14 )
+light_mask = 2
+
+[node name="ParticlesFX_01" parent="." index="4" instance=ExtResource( 5 )]
+show_behind_parent = true
+material = SubResource( 15 )
+scale = Vector2( 0.08, 0.08 )
+amount = 12
+process_material = SubResource( 18 )
+texture = SubResource( 19 )
+
+[node name="Light" parent="." index="5"]
+texture_scale = 0.3
 
 [connection signal="animation_finished" from="Texture" to="." method="on_animation_finished"]

@@ -1,0 +1,1659 @@
+[gd_scene load_steps=99 format=2]
+
+[ext_resource path="res://scenes/scenario/scenario_tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/07-Pig With a Match/Idle(32x30).png" type="Texture" id=2]
+[ext_resource path="res://scenes/scenario/ambient_light.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/scenario/shadow_mask.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/16 - Environments/slot_container.png" type="Texture" id=6]
+[ext_resource path="res://resources/girassol_font.tres" type="DynamicFont" id=8]
+[ext_resource path="res://assets/16 - Environments/animated_window.png" type="Texture" id=9]
+[ext_resource path="res://assets/07-Pig With a Match/Walk(32x30).png" type="Texture" id=10]
+[ext_resource path="res://assets/06-Pig Hide in the Box/Looking Out (34x30).png" type="Texture" id=11]
+[ext_resource path="res://scripts/management/saves_container.gd" type="Script" id=12]
+[ext_resource path="res://scripts/management/slot_manager.gd" type="Script" id=13]
+[ext_resource path="res://assets/06-Pig Hide in the Box/Jump Anticipation (26x20).png" type="Texture" id=14]
+[ext_resource path="res://assets/16 - Environments/exit_button_normal.png" type="Texture" id=15]
+[ext_resource path="res://assets/16 - Environments/new_game_button_pressed.png" type="Texture" id=16]
+[ext_resource path="res://assets/16 - Environments/exit_button_hover.png" type="Texture" id=17]
+[ext_resource path="res://assets/16 - Environments/exit_button_pressed.png" type="Texture" id=18]
+[ext_resource path="res://assets/16 - Environments/new_game_button_normal.png" type="Texture" id=19]
+[ext_resource path="res://assets/16 - Environments/new_game_button_hover.png" type="Texture" id=20]
+[ext_resource path="res://assets/16 - Environments/menu_background.png" type="Texture" id=21]
+[ext_resource path="res://assets/16 - Environments/home_button.png" type="Texture" id=22]
+[ext_resource path="res://assets/16 - Environments/home_button_pressed.png" type="Texture" id=23]
+[ext_resource path="res://assets/16 - Environments/home_button_hover.png" type="Texture" id=24]
+[ext_resource path="res://assets/16 - Environments/continue_button_hover.png" type="Texture" id=25]
+[ext_resource path="res://assets/16 - Environments/continue_button_normal.png" type="Texture" id=26]
+[ext_resource path="res://assets/16 - Environments/continue_button_pressed.png" type="Texture" id=27]
+[ext_resource path="res://scripts/gui/main_menu.gd" type="Script" id=28]
+[ext_resource path="res://assets/16 - Environments/popup_container.png" type="Texture" id=29]
+[ext_resource path="res://assets/16 - Environments/yes_button_pressed.png" type="Texture" id=30]
+[ext_resource path="res://assets/16 - Environments/yes_button_normal.png" type="Texture" id=31]
+[ext_resource path="res://assets/16 - Environments/yes_button_hover.png" type="Texture" id=32]
+[ext_resource path="res://assets/16 - Environments/no_button_pressed.png" type="Texture" id=33]
+[ext_resource path="res://assets/16 - Environments/no_button_normal.png" type="Texture" id=34]
+[ext_resource path="res://assets/16 - Environments/no_button_hover.png" type="Texture" id=35]
+[ext_resource path="res://assets/16 - Environments/back_button_normal.png" type="Texture" id=36]
+[ext_resource path="res://assets/16 - Environments/back_button_hover.png" type="Texture" id=37]
+[ext_resource path="res://assets/16 - Environments/back_button_pressed.png" type="Texture" id=38]
+[ext_resource path="res://assets/16 - Environments/confirm_button_hover.png" type="Texture" id=39]
+[ext_resource path="res://assets/16 - Environments/confirm_button_pressed.png" type="Texture" id=40]
+[ext_resource path="res://assets/16 - Environments/confirm_button_normal.png" type="Texture" id=41]
+[ext_resource path="res://assets/16 - Environments/new_game_container.png" type="Texture" id=42]
+[ext_resource path="res://assets/15-Fonts/Girassol-Regular.ttf" type="DynamicFontData" id=43]
+[ext_resource path="res://assets/16 - Environments/text_edit.png" type="Texture" id=44]
+[ext_resource path="res://assets/16 - Environments/back_menu_button_normal.png" type="Texture" id=45]
+[ext_resource path="res://assets/16 - Environments/back_menu_button_pressed.png" type="Texture" id=46]
+[ext_resource path="res://assets/16 - Environments/back_menu_button_hover.png" type="Texture" id=47]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 68, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 102, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 136, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 170, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 204, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 238, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 272, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 306, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 340, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 2 )
+region = Rect2( 374, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 10 )
+region = Rect2( 34, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 10 )
+region = Rect2( 68, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 10 )
+region = Rect2( 102, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 10 )
+region = Rect2( 136, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 10 )
+region = Rect2( 170, 0, 34, 30 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 6.0
+} ]
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 60, 58 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 9 )
+region = Rect2( 60, 0, 60, 58 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 9 )
+region = Rect2( 120, 0, 60, 58 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 9 )
+region = Rect2( 180, 0, 60, 58 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 9 )
+region = Rect2( 240, 0, 60, 58 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 9 )
+region = Rect2( 300, 0, 60, 58 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 9 )
+region = Rect2( 360, 0, 60, 58 )
+
+[sub_resource type="SpriteFrames" id=27]
+animations = [ {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 11 )
+region = Rect2( 34, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 11 )
+region = Rect2( 68, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 34, 30 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 14 )
+region = Rect2( 34, 0, 34, 30 )
+
+[sub_resource type="SpriteFrames" id=34]
+animations = [ {
+"frames": [ SubResource( 28 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
+"loop": true,
+"name": "LookOut",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=35]
+length = 16.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TorchPig:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 8, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Idle", "Walk", "Idle", "Walk" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TorchPig:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TorchPig:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 8, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 30, 145.079 ), Vector2( 30, 145.079 ), Vector2( 290, 145.079 ), Vector2( 290, 145.079 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BoxPig:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2, 5, 13 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Idle", "LookOut", "Idle", "LookOut" ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Canvas/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "new_game"
+} ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "fade_in_continue"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Canvas/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "continue_game"
+} ]
+}
+
+[sub_resource type="Animation" id=38]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Canvas/Interface/NewGameContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Canvas/Interface/NewGameContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Canvas/Interface/PopupContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Canvas/Interface/PopupContainer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Canvas/Interface/SavesContainer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Canvas/Interface/SavesContainer:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.509804 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Canvas/Interface/SavesContainer/HBox:can_interact")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=39]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Canvas/Interface/SavesContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Canvas/Interface/SavesContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Canvas/Interface/NewGameContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Canvas/Interface/NewGameContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Canvas/Interface/SavesContainer/HBox:can_interact")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=40]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Canvas/Interface/NewGameContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Canvas/Interface/NewGameContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Canvas/Interface/PopupContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Canvas/Interface/PopupContainer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Canvas/Interface/SavesContainer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Canvas/Interface/SavesContainer:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.509804 ) ]
+}
+
+[sub_resource type="Animation" id=41]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Canvas/Interface/PopupContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Canvas/Interface/PopupContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Canvas/Interface/SavesContainer/Mask:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Canvas/Interface/SavesContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.509804 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Canvas/Interface/SavesContainer/HBox:can_interact")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=42]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Canvas/Interface/ButtonsContainer:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 119.5, 39 ), Vector2( 10, 39 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Canvas/Interface/ButtonsContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.509804 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Continue" ],
+"method": "show_saves_container"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Canvas/Interface/ButtonsContainer/Mask:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 1 ]
+}
+
+[sub_resource type="Animation" id=43]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Canvas/Interface/SavesContainer/Mask:mouse_filter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Canvas/Interface/SavesContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Canvas/Interface/SavesContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "back_to_menu"
+} ]
+}
+
+[sub_resource type="Animation" id=44]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Canvas/Interface/SavesContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Canvas/Interface/SavesContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Canvas/Interface/NewGameContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Canvas/Interface/NewGameContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Canvas/Interface/SavesContainer/HBox:can_interact")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=45]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Canvas/Interface/ButtonsContainer:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 119.5, 39 ), Vector2( 10, 39 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Canvas/Interface/ButtonsContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.509804 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "New Game" ],
+"method": "show_saves_container"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Canvas/Interface/ButtonsContainer/Mask:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 1 ]
+}
+
+[sub_resource type="Animation" id=46]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Canvas/Interface/PopupContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Canvas/Interface/PopupContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Canvas/Interface/SavesContainer/Mask:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Canvas/Interface/SavesContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.509804 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Canvas/Interface/SavesContainer/HBox:can_interact")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=47]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Canvas/Interface/ButtonsContainer:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 10, 39 ), Vector2( 119.5, 39 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Canvas/Interface/ButtonsContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.509804 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Canvas/Interface/ButtonsContainer/Mask:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+
+[sub_resource type="Animation" id=48]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Canvas/Interface/SavesContainer/Mask:mouse_filter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Canvas/Interface/SavesContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Canvas/Interface/SavesContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=49]
+size = 22
+font_data = ExtResource( 43 )
+
+[sub_resource type="StyleBoxTexture" id=50]
+
+[sub_resource type="StyleBoxTexture" id=51]
+
+[sub_resource type="StyleBoxTexture" id=52]
+
+[sub_resource type="DynamicFont" id=53]
+size = 10
+font_data = ExtResource( 43 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scenario" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 65535, 0, 4, 0, 1, 0, 1, 1, 1, 2, 1, 1, 3, 1, 1, 4, 1, 1, 5, 1, 1, 6, 1, 1, 7, 1, 1, 8, 1, 1, 9, 1, 2, 10, 0, 4, 131071, 0, 65540, 65536, 1, 65536, 65537, 1, 65537, 65538, 1, 65537, 65539, 1, 65537, 65540, 1, 65537, 65541, 1, 65537, 65542, 1, 65537, 65543, 1, 65537, 65544, 1, 65537, 65545, 1, 65538, 65546, 0, 65540, 196607, 0, 65540, 131072, 1, 65536, 131073, 1, 65537, 131074, 1, 65537, 131075, 1, 65537, 131076, 1, 65537, 131077, 1, 65537, 131078, 1, 65537, 131079, 1, 65537, 131080, 1, 65537, 131081, 1, 65538, 131082, 0, 65540, 262143, 0, 65540, 196608, 1, 65536, 196609, 1, 65537, 196610, 1, 65537, 196611, 1, 65537, 196612, 1, 65537, 196613, 1, 65537, 196614, 1, 65537, 196615, 1, 65537, 196616, 1, 65537, 196617, 1, 65538, 196618, 0, 65540, 327679, 0, 65540, 262144, 1, 131072, 262145, 1, 131073, 262146, 1, 131073, 262147, 1, 131073, 262148, 1, 131073, 262149, 1, 131073, 262150, 1, 131073, 262151, 1, 131073, 262152, 1, 131073, 262153, 1, 131074, 262154, 0, 65540, 393215, 0, 262159, 327680, 0, 262145, 327681, 0, 262145, 327682, 0, 262145, 327683, 0, 262145, 327684, 0, 262145, 327685, 0, 262145, 327686, 0, 262145, 327687, 0, 262145, 327688, 0, 262145, 327689, 0, 262145, 327690, 0, 262160 )
+
+[node name="TorchPig" type="AnimatedSprite" parent="."]
+position = Vector2( 30, 145.079 )
+frames = SubResource( 19 )
+animation = "Idle"
+frame = 10
+playing = true
+
+[node name="AmbientLight" parent="TorchPig" instance=ExtResource( 3 )]
+shadow_item_cull_mask = 2
+
+[node name="AnimatedWindow" type="AnimatedSprite" parent="."]
+position = Vector2( 267.779, 81.5057 )
+frames = SubResource( 27 )
+frame = 6
+playing = true
+
+[node name="AmbientLight" parent="AnimatedWindow" instance=ExtResource( 3 )]
+position = Vector2( -11.4905, -7.07107 )
+
+[node name="BoxPig" type="AnimatedSprite" parent="."]
+position = Vector2( 90, 145 )
+frames = SubResource( 34 )
+animation = "Idle"
+playing = true
+flip_h = true
+
+[node name="ShadowMask" parent="." instance=ExtResource( 4 )]
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+autoplay = "PigTranslating"
+anims/PigTranslating = SubResource( 35 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 3.0
+anims/fade_in = SubResource( 36 )
+anims/fade_in_continue = SubResource( 37 )
+anims/ng_from_popup = SubResource( 38 )
+anims/ng_from_saves = SubResource( 39 )
+anims/popup_from_ng = SubResource( 40 )
+anims/popup_from_saves = SubResource( 41 )
+anims/saves_from_continue = SubResource( 42 )
+anims/saves_from_menu = SubResource( 43 )
+anims/saves_from_ng = SubResource( 44 )
+anims/saves_from_ng_btn = SubResource( 45 )
+anims/saves_from_popup = SubResource( 46 )
+anims/show_menu_container = SubResource( 47 )
+anims/show_saves_container = SubResource( 48 )
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="Interface" type="Control" parent="Canvas"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 17.0
+margin_right = -8.0
+margin_bottom = -28.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameName" type="Label" parent="Canvas/Interface"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -103.0
+margin_top = -72.3894
+margin_right = 103.0
+margin_bottom = -45.3894
+custom_fonts/font = SubResource( 49 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+text = "Lil Sisero's Adventure"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGameContainer" type="TextureRect" parent="Canvas/Interface"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.5
+margin_top = -26.0
+margin_right = 101.5
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 63, 41 )
+texture = ExtResource( 42 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundText" type="TextureRect" parent="Canvas/Interface/NewGameContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -41.0
+margin_top = -15.4095
+margin_right = 41.0
+margin_bottom = 4.59048
+texture = ExtResource( 44 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="LineEdit" parent="Canvas/Interface/NewGameContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -41.0
+margin_top = -15.1198
+margin_right = 41.0
+margin_bottom = 4.8802
+rect_min_size = Vector2( 82, 20 )
+custom_styles/read_only = SubResource( 50 )
+custom_styles/focus = SubResource( 51 )
+custom_styles/normal = SubResource( 52 )
+custom_fonts/font = SubResource( 53 )
+align = 1
+max_length = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="Canvas/Interface/NewGameContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -51.0
+margin_top = 14.345
+margin_right = 51.0
+margin_bottom = 28.345
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmButton" type="TextureButton" parent="Canvas/Interface/NewGameContainer/HBox" groups=[
+"Button",
+]]
+margin_right = 46.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 40, 14 )
+texture_normal = ExtResource( 41 )
+texture_pressed = ExtResource( 40 )
+texture_hover = ExtResource( 39 )
+
+[node name="BackButton" type="TextureButton" parent="Canvas/Interface/NewGameContainer/HBox" groups=[
+"Button",
+]]
+margin_left = 56.0
+margin_right = 102.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 40, 14 )
+texture_normal = ExtResource( 36 )
+texture_pressed = ExtResource( 38 )
+texture_hover = ExtResource( 37 )
+
+[node name="ButtonsContainer" type="TextureRect" parent="Canvas/Interface"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -33.0
+margin_top = -28.5
+margin_right = 33.0001
+margin_bottom = 59.5
+rect_pivot_offset = Vector2( 33, 44 )
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Canvas/Interface/ButtonsContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -23.0
+margin_top = -37.0
+margin_right = 23.0
+margin_bottom = 37.0
+custom_constants/separation = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGame" type="TextureButton" parent="Canvas/Interface/ButtonsContainer/VBox" groups=[
+"Button",
+]]
+margin_right = 46.0
+margin_bottom = 14.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 20 )
+
+[node name="Continue" type="TextureButton" parent="Canvas/Interface/ButtonsContainer/VBox" groups=[
+"Button",
+]]
+margin_top = 20.0
+margin_right = 46.0
+margin_bottom = 34.0
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 25 )
+
+[node name="Quit" type="TextureButton" parent="Canvas/Interface/ButtonsContainer/VBox" groups=[
+"Button",
+]]
+margin_top = 40.0
+margin_right = 46.0
+margin_bottom = 54.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 17 )
+
+[node name="HBox" type="HBoxContainer" parent="Canvas/Interface/ButtonsContainer/VBox"]
+margin_top = 60.0
+margin_right = 46.0
+margin_bottom = 74.0
+custom_constants/separation = 0
+
+[node name="Margin" type="Control" parent="Canvas/Interface/ButtonsContainer/VBox/HBox"]
+margin_right = 16.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="UdemyButton" type="TextureButton" parent="Canvas/Interface/ButtonsContainer/VBox/HBox" groups=[
+"Button",
+]]
+margin_left = 16.0
+margin_right = 30.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 14, 14 )
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 23 )
+texture_hover = ExtResource( 24 )
+
+[node name="Mask" type="TextureRect" parent="Canvas/Interface/ButtonsContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="SavesContainer" type="Control" parent="Canvas/Interface"]
+visible = false
+modulate = Color( 1, 1, 1, 0.509804 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -62.5
+margin_top = -38.0
+margin_right = 139.5
+margin_bottom = 68.0
+rect_min_size = Vector2( 202, 106 )
+rect_pivot_offset = Vector2( 101, 53 )
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="VBoxContainer" parent="Canvas/Interface/SavesContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -101.0
+margin_top = -53.0
+margin_right = 101.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 101, 53 )
+mouse_filter = 2
+custom_constants/separation = 8
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GContainer" type="GridContainer" parent="Canvas/Interface/SavesContainer/HBox"]
+margin_right = 202.0
+margin_bottom = 106.0
+mouse_filter = 2
+custom_constants/vseparation = 10
+custom_constants/hseparation = 10
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot1" type="TextureRect" parent="Canvas/Interface/SavesContainer/HBox/GContainer"]
+margin_right = 96.0
+margin_bottom = 48.0
+texture = ExtResource( 6 )
+script = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot1"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -26.5
+margin_top = -7.0
+margin_right = 26.5
+margin_bottom = 7.0
+custom_fonts/font = ExtResource( 8 )
+text = "No saved data!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = 10.0
+margin_right = -11.0
+margin_bottom = -10.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot1/HBox"]
+margin_right = 41.0
+margin_bottom = 28.0
+mouse_filter = 2
+custom_constants/separation = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot1/HBox/VBox"]
+margin_right = 41.0
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 8 )
+text = "Shadowsisko"
+valign = 1
+
+[node name="Level" type="Label" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot1/HBox/VBox"]
+margin_top = 18.0
+margin_right = 41.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 8 )
+text = "level: 3"
+valign = 1
+
+[node name="Faceset" type="TextureRect" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot1/HBox"]
+margin_left = 45.0
+margin_right = 45.0
+margin_bottom = 28.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot2" type="TextureRect" parent="Canvas/Interface/SavesContainer/HBox/GContainer"]
+margin_left = 106.0
+margin_right = 202.0
+margin_bottom = 48.0
+texture = ExtResource( 6 )
+script = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -26.5
+margin_top = -7.0
+margin_right = 26.5
+margin_bottom = 7.0
+custom_fonts/font = ExtResource( 8 )
+text = "No saved data!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = 10.0
+margin_right = -11.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot2/HBox"]
+margin_right = 46.0
+margin_bottom = 28.0
+custom_constants/separation = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot2/HBox/VBox"]
+margin_right = 46.0
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 8 )
+text = "Shadowsisko"
+valign = 1
+
+[node name="Level" type="Label" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot2/HBox/VBox"]
+margin_top = 14.0
+margin_right = 46.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 8 )
+text = "level: 3"
+valign = 1
+
+[node name="Faceset" type="TextureRect" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot2/HBox"]
+margin_left = 50.0
+margin_right = 50.0
+margin_bottom = 28.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot3" type="TextureRect" parent="Canvas/Interface/SavesContainer/HBox/GContainer"]
+margin_top = 58.0
+margin_right = 96.0
+margin_bottom = 106.0
+texture = ExtResource( 6 )
+script = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -26.5
+margin_top = -7.0
+margin_right = 26.5
+margin_bottom = 7.0
+custom_fonts/font = ExtResource( 8 )
+text = "No saved data!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot3"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = 10.0
+margin_right = -11.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot3/HBox"]
+margin_right = 46.0
+margin_bottom = 28.0
+custom_constants/separation = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot3/HBox/VBox"]
+margin_right = 46.0
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 8 )
+text = "Shadowsisko"
+valign = 1
+
+[node name="Level" type="Label" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot3/HBox/VBox"]
+margin_top = 14.0
+margin_right = 46.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 8 )
+text = "level: 3"
+valign = 1
+
+[node name="Faceset" type="TextureRect" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot3/HBox"]
+margin_left = 50.0
+margin_right = 50.0
+margin_bottom = 28.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot4" type="TextureRect" parent="Canvas/Interface/SavesContainer/HBox/GContainer"]
+margin_left = 106.0
+margin_top = 58.0
+margin_right = 202.0
+margin_bottom = 106.0
+texture = ExtResource( 6 )
+script = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -26.5
+margin_top = -7.0
+margin_right = 26.5
+margin_bottom = 7.0
+custom_fonts/font = ExtResource( 8 )
+text = "No saved data!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot4"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = 10.0
+margin_right = -11.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot4/HBox"]
+margin_right = 46.0
+margin_bottom = 28.0
+custom_constants/separation = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot4/HBox/VBox"]
+margin_right = 46.0
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 8 )
+text = "Shadowsisko"
+valign = 1
+
+[node name="Level" type="Label" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot4/HBox/VBox"]
+margin_top = 14.0
+margin_right = 46.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 8 )
+text = "level: 3"
+valign = 1
+
+[node name="Faceset" type="TextureRect" parent="Canvas/Interface/SavesContainer/HBox/GContainer/Slot4/HBox"]
+margin_left = 50.0
+margin_right = 50.0
+margin_bottom = 28.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mask" type="TextureRect" parent="Canvas/Interface/SavesContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 202, 106 )
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="TextureButton" parent="Canvas/Interface/SavesContainer" groups=[
+"Button",
+]]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -7.0
+margin_top = -7.0
+margin_right = 7.0
+margin_bottom = 7.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 46 )
+texture_hover = ExtResource( 47 )
+
+[node name="PopupContainer" type="TextureRect" parent="Canvas/Interface"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -62.5
+margin_top = -38.0
+margin_right = 139.5
+margin_bottom = 68.0
+rect_min_size = Vector2( 202, 106 )
+rect_pivot_offset = Vector2( 101, 53 )
+mouse_filter = 2
+texture = ExtResource( 29 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="Canvas/Interface/PopupContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = 1.0
+margin_right = 32.0
+margin_bottom = 15.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YesPopupButton" type="TextureButton" parent="Canvas/Interface/PopupContainer/HBox" groups=[
+"Button",
+]]
+margin_right = 30.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 24, 10 )
+mouse_filter = 1
+texture_normal = ExtResource( 31 )
+texture_pressed = ExtResource( 30 )
+texture_hover = ExtResource( 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoPopupButton" type="TextureButton" parent="Canvas/Interface/PopupContainer/HBox" groups=[
+"Button",
+]]
+margin_left = 34.0
+margin_right = 64.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 24, 10 )
+mouse_filter = 1
+texture_normal = ExtResource( 34 )
+texture_pressed = ExtResource( 33 )
+texture_hover = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Canvas"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="text_entered" from="Canvas/Interface/NewGameContainer/TextEdit" to="." method="on_text_entered"]
+[connection signal="button_pressed" from="Canvas/Interface/SavesContainer/HBox" to="." method="button_pressed"]
+[connection signal="show_popup" from="Canvas/Interface/SavesContainer/HBox" to="." method="show_popup"]

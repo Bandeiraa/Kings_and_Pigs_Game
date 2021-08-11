@@ -35,7 +35,7 @@ collision_mask = 3
 script = ExtResource( 2 )
 type = "Support"
 slices_to_spawn = ExtResource( 7 )
-assistants_list = [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ) ]
+assistants_list = [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]
 
 [node name="Texture" parent="." index="0"]
 frames = SubResource( 2 )
@@ -56,3 +56,6 @@ shape = SubResource( 4 )
 
 [node name="Occluder" parent="." index="3"]
 occluder = SubResource( 5 )
+
+[node name="Light" parent="." index="4"]
+enabled = false

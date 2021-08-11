@@ -4,6 +4,12 @@ signal hit_animation
 
 var money: int = 0
 
+func _ready() -> void:
+	Globals.load_data()
+	update_health(Globals.data_dictionary.health, "Support")
+	update_money(Globals.data_dictionary.money, "Extra")
+	
+	
 func update_health(value: int, type: String) -> void:
 	match type:
 		"Attack":
@@ -14,7 +20,9 @@ func update_health(value: int, type: String) -> void:
 			health += value
 			verify_health()
 			
-	instance_popup(value, type)
+	if get_parent().visible == true:
+		instance_popup(value, type)
+		
 	get_tree().call_group("Interface", "update_gui", health, type)
 			
 			
